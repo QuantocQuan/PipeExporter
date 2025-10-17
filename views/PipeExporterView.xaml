@@ -1,0 +1,51 @@
+﻿<Window x:Class="ExporterPipe.views.PipeExporterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            Title="Exporter Pipe" Width="400" Height="440">
+
+    <Grid Background="White" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="*"/>
+            <!-- Buttons -->
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Text="Export / Import JSON"
+                   Grid.Row="0"
+                   FontSize="15"
+                   FontWeight="Bold"
+                   Foreground="#333"
+                   HorizontalAlignment="Center"
+                   Margin="0 0 0 20"/>
+
+        <!-- Button Section -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="BtnExport"
+                    Grid.Column="1"
+                    Content="Export JSON"
+                    Width="120" Height="40"
+                    Background="#4CAF50" Foreground="White"
+                    FontWeight="SemiBold"
+                    Margin="10 0"
+                    />
+
+            <Button x:Name="BtnImport"
+                    Grid.Column="2"
+                    Content="Import JSON"
+                    Width="120" Height="40"
+                    Background="#2196F3" Foreground="White"
+                    FontWeight="SemiBold"
+                    Margin="10 0"
+                    />
+        </Grid>
+    </Grid>
+</Window>

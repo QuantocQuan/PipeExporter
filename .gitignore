@@ -1,0 +1,44 @@
+# Build folders
+bin/
+obj/
+Debug/
+Release/
+
+# Visual Studio files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+
+# Revit API/Local references
+# Thường bạn không commit các DLL Revit cục bộ
+*.dll
+
+# NuGet packages
+*.nupkg
+packages/
+*.snupkg
+
+# Rider / VSCode
+.idea/
+.vscode/
+.vs/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Logs and temporary files
+*.log
+*.tmp
+*.cache
+*.vs/
+
+# OS-specific
+Thumbs.db
+.DS_Store
+
+# Others
+*.pdb
+*.dbmdl

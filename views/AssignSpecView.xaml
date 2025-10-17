@@ -1,0 +1,59 @@
+﻿<Window x:Class="ExporterPipe.views.AssignSpecView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Assign Spec" Width="400" Height="440">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Nút Hide/UnHide + Isolate -->
+            <RowDefinition Height="Auto"/>
+            <!-- ComboBox -->
+            <RowDefinition Height="*"/>
+            <!-- DataGrid (chiếm phần còn lại) -->
+            <RowDefinition Height="Auto"/>
+            <!-- Nút AssignSpec -->
+        </Grid.RowDefinitions>
+
+        <!-- Hàng 1: 2 nút ngang hàng -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Margin="0,0,0,10">
+            <Button Content="Hide/UnHide"
+                    Command="{Binding ToggleElementVisibilityCommand}"
+                    Width="92" Margin="5"/>
+            <Button Content="Isolate/UnIsolate"
+                    Command="{Binding ToggleElementIsolateCommand}"
+                    Width="92" Margin="5"/>
+        </StackPanel>
+
+        <!-- Hàng 2: Chọn Spec -->
+        <StackPanel Grid.Row="1" Margin="0,0,0,10">
+            <TextBlock Text="Chọn Spec:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <ComboBox ItemsSource="{Binding SpecList}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedSpec}"
+                      Width="200"/>
+        </StackPanel>
+
+        <!-- Hàng 3: DataGrid -->
+        <DataGrid Grid.Row="2"
+                  ItemsSource="{Binding DataAssigned}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Pipe Type" Binding="{Binding Type}" Width="*" />
+                <DataGridTextColumn Header="Pipe Spec" Binding="{Binding PipeSpec}" Width="*" />
+                <DataGridTextColumn Header="Fitting Spec" Binding="{Binding Fitting_Spec}" Width="*" />
+                <DataGridTextColumn Header="Exclusion" Binding="{Binding Exclusion}" Width="*" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Hàng 4: Nút AssignSpec bên phải -->
+        <Button Grid.Row="3"
+                Content="AssignSpec"
+                Command="{Binding AssignCommand}"
+                Width="120"
+                HorizontalAlignment="Right"/>
+    </Grid>
+</Window>
