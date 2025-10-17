@@ -91,7 +91,14 @@ namespace ExporterPipe.commands
 
                             if (!pipeType.IsActive) pipeType.Activate();
 
-                            Pipe newPipe = Pipe.Create(doc, doc.GetDefaultElementTypeId(ElementTypeGroup.PipeType), pipeType.Id, level.Id, start, end);
+                            MEPSystemType sysType = new FilteredElementCollector(doc)
+                            .OfClass(typeof(MEPSystemType))
+                            .Cast<MEPSystemType>()
+                            .FirstOrDefault(s => s.Name == elem.SystemType);
+
+                            ElementId systemTypeId = sysType?.Id ?? ElementId.InvalidElementId;
+
+                            Pipe newPipe = Pipe.Create(doc, sysType.Id, pipeType.Id, level.Id, start, end);
                             newPipe.get_Parameter(BuiltInParameter.RBS_PIPE_DIAMETER_PARAM).Set(elem.Diameter);
                         }
                         else if (elem.Category.Contains("Fitting"))

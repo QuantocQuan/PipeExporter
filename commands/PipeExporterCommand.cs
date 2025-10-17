@@ -55,6 +55,7 @@ namespace ExporterPipe.commands
                         ?? element.LookupParameter("Reference Level")?.AsValueString()
                         ?? element.LookupParameter("Level")?.AsValueString()
                         ?? "";
+                    double elevation = level?.Elevation ?? 0;
 
                     // System Type
                     string systemType = element.LookupParameter("System Type")?.AsValueString();
