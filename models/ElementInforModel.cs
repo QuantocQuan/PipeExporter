@@ -15,10 +15,11 @@ namespace ExporterPipe.models
         public string Category { get; set; }
         public string FamilyName { get; set; }
         public string TypeName { get; set; }
-        public string LevelName { get; set; }
+        public LevelModel Level{ get; set; }
         public string SystemType { get; set; }
         public XYZModel StartPoint { get; set; }
         public XYZModel EndPoint { get; set; }
+        public XYZModel Location { get; set; }
         public double Length { get; set; }
         public double Diameter { get; set; }
         public XYZ Direction { get; set; }

@@ -79,11 +79,11 @@
     <Compile Include="actions\PipeExporterAction.cs" />
     <Compile Include="commands\AssignSpecCommand.cs" />
     <Compile Include="commands\PipeExporterCommand.cs" />
-    <Compile Include="commands\PipeImporterCommand.cs" />
     <Compile Include="models\BoundingBoxModel.cs" />
     <Compile Include="models\ConnectorInforModel.cs" />
     <Compile Include="models\ElementInforModel.cs" />
     <Compile Include="models\ItemSourceModel.cs" />
+    <Compile Include="models\LevelModel.cs" />
     <Compile Include="models\ParameterInforModel.cs" />
     <Compile Include="models\SpecModel.cs" />
     <Compile Include="models\SystemPipeModel.cs" />
